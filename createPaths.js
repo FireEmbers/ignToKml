@@ -46,7 +46,7 @@ module.exports = function (tf, ignMap, rows, cols){
   row = pathHeadRow;
   col = pathHeadCol;
 
-  pathArray.push([pathHeadRow,pathHeadCol, ignMap[col + cols*row]])
+  pathArray.push([pathHeadRow,pathHeadCol])
 
   //Build Path
   var nBacktrace = 0;
@@ -76,7 +76,7 @@ module.exports = function (tf, ignMap, rows, cols){
 
         nBacktrace = backTraceArray[n];
 
-        pathArray.push([nrow,ncol, ignMap[ncell]]);
+        pathArray.push([nrow,ncol]);
 
         break;
 
@@ -90,14 +90,12 @@ module.exports = function (tf, ignMap, rows, cols){
     col = ncol;
     row = nrow;
 
-
-
     if (row === pathHeadRow && col ===pathHeadCol)
         break;
 
   }
 
-  console.log(pathArray);
+  return (pathArray);
 
 };
 
