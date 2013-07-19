@@ -3,15 +3,15 @@ var readIgnMap = require('../utils/fileToArray');
 var cconv = require('cconv');
 var printKml = require('./kml/render.js');
 
-var rows = 100;
-var cols = 100;
+var rows = 1024;
+var cols = 1024;
 
 var height = 4000;
 var width = 4000;
 
-var tf= 200;
+var tf= 3000;
 
-var coord = {lat:[41,43,16.46],lon:[ 8,9,8.32]};
+var coord = {lat:[41,43,16.46],lon:[ 8,9,8.36002]};
 
 var deltaH = height/rows;
 var deltaW = width/cols;
@@ -26,11 +26,13 @@ cB = cconv(sridA, sridB, cA, true);
 var Easting0 = cB[0] - width/2;
 var Norting0 = cB[1] + height/2;
 
-readIgnMap('./../emberTerminal/ign.map', rows, cols, onMap);
+readIgnMap('./testData/ignLean16_Sc0_1024.dat', rows, cols, onMap);
 
 function onMap(ignData){
 
   var pathRowCol = createPaths(tf, ignData, rows, cols);
+
+  console.log(pathRowCol);
 
   var pathEN = Array(pathRowCol.length);
 
@@ -45,7 +47,7 @@ function onMap(ignData){
   for (var i = 0; i < pathRowCol.length; i++)
     pathCoord[i] = cconv(sridA, sridB, pathEN[i], false);
 
-  printKml(pathCoord);
+  printKml(pathCoord, './results_' + tf +'.kml');
 
 
 }
