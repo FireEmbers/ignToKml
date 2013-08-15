@@ -12,12 +12,12 @@ module.exports = function (coordPath, filename){
     
   };
 
-var data = {
-  boundaryCoordinates: boundary.join('\n'),
-};
+  var data = {
+    boundaryCoordinates: boundary.join('\n'),
+  };
 
-var template = fs.readFileSync('./kml/templateSingle.kml', { encoding: 'utf8' });
-var result = Mustache.render(template, data);
-fs.writeFileSync(filename, result);
+  var template = fs.readFileSync('./kml/templateSingle.kml', { encoding: 'utf8' });
+  var result = Mustache.render(template, data);
+  fs.writeFileSync(filename, result);
 
-};
+}

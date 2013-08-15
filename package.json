@@ -1,0 +1,34 @@
+{
+  "name": "ignMapToKml",
+  "version": "0.1.0",
+  "description": "Convert embers ignition maps to cotours in kml",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "cconv": "~0.1.0",
+    "mustache": "~0.7.2",
+    "embersutils": "git://github.com/FireEmbers/utils.git"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FireEmbers/ignToKml.git"
+  },
+  "keywords": [
+    "kml",
+    "embers",
+    "gis",
+    "contour",
+    "algorithms"
+  ],
+  "author": "Flávio Sousa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FireEmbers/ignToKml/issues"
+  }
+}
