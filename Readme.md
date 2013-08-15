@@ -1,6 +1,6 @@
 ##Install
 ```
-npm install git//github.com/FireEmbers/ignToKml.git
+npm install git://github.com/FireEmbers/ignToKml.git
 ```
 
 ## Example
