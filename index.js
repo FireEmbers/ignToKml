@@ -6,7 +6,6 @@ module.exports = function( ignData, filename, tf, cA, rows, cols, height, width)
 
   var pathRowCol = createPaths(tf, ignData, rows, cols);
 
-  console.log(pathRowCol);
 
   var pathEN = Array(pathRowCol.length);
 
