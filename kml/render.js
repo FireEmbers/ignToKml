@@ -16,7 +16,7 @@ module.exports = function (coordPath, filename){
     boundaryCoordinates: boundary.join('\n'),
   };
 
-  var template = fs.readFileSync('./kml/templateSingle.kml', { encoding: 'utf8' });
+  var template = fs.readFileSync(__dirname+'/templateSingle.kml', { encoding: 'utf8' });
   var result = Mustache.render(template, data);
   fs.writeFileSync(filename, result);
 
