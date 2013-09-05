@@ -9,7 +9,7 @@
   "dependencies": {
     "cconv": "~0.1.0",
     "mustache": "~0.7.2",
-    "embersutils": "git://github.com/FireEmbers/utils.git"
+    "embersutils": "https://github.com/FireEmbers/utils/archive/master.tar.gz"
   },
   "devDependencies": {},
   "scripts": {
