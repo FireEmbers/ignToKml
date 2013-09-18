@@ -2,7 +2,7 @@ var createPaths = require('./src/createPaths');
 var cconv = require('cconv');
 var createKml = require('./kml/render.js');
 
-module.exports = function( ignData, filename, tf, cA, rows, cols, height, width){
+module.exports = function( ignData, tf, cA, rows, cols, height, width){
 
   var pathRowCol = createPaths(tf, ignData, rows, cols);
 
