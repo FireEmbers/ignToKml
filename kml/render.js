@@ -1,8 +1,8 @@
-var fs = require('fs');
 var Mustache = require('mustache');
+var fs = require('fs');
 
 
-module.exports = function (coordPath, filename){
+module.exports = function (coordPath){
 
   var boundary = Array(coordPath.length);
 
@@ -18,6 +18,7 @@ module.exports = function (coordPath, filename){
 
   var template = fs.readFileSync(__dirname+'/templateSingle.kml', { encoding: 'utf8' });
   var result = Mustache.render(template, data);
-  fs.writeFileSync(filename, result);
-
+  
+  //return kml string
+  return result;
 }

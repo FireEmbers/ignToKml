@@ -1,5 +1,6 @@
 var ignToKml = require('./index');
 var readIgnMap = require('embersutils').fileToArray;
+var fs = require('fs');
 
 var rows = 1024;
 var cols = 1024;
@@ -18,7 +19,9 @@ function onMap(ignData){
 
   filename = './testResults_' + tf +'.kml'
 
-  ignToKml( ignData, filename, tf, ignPt, rows, cols, height, width);
+  var kmlFile = ignToKml( ignData, filename, tf, ignPt, rows, cols, height, width);
+
+  fs.writeFileSync('./kmlTest.kml', kmlFile, {encoding: 'utf8'});
 
 }
 

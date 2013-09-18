@@ -1,6 +1,6 @@
 var createPaths = require('./src/createPaths');
 var cconv = require('cconv');
-var printKml = require('./kml/render.js');
+var createKml = require('./kml/render.js');
 
 module.exports = function( ignData, filename, tf, cA, rows, cols, height, width){
 
@@ -30,6 +30,6 @@ module.exports = function( ignData, filename, tf, cA, rows, cols, height, width)
   for (var i = 0; i < pathRowCol.length; i++)
     pathCoord[i] = cconv(sridA, sridB, pathEN[i], false);
 
-  printKml(pathCoord, filename);
+  return createKml(pathCoord);
 
 }
