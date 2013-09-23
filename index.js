@@ -30,6 +30,6 @@ module.exports = function( ignData, tf, cA, rows, cols, height, width){
   for (var i = 0; i < pathRowCol.length; i++)
     pathCoord[i] = cconv(sridA, sridB, pathEN[i], false);
 
-  return createKml(pathCoord);
+  return { 'path': pathCoord,'kml': createKml(pathCoord)};
 
 }

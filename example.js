@@ -17,11 +17,18 @@ readIgnMap('./exampleData/ignLean16_Sc3_1024.dat', rows, cols, onMap);
 
 function onMap(ignData){
 
-  filename = './testResults_' + tf +'.kml'
+  var maps = ignToKml( ignData, tf, ignPt, rows, cols, height, width);
 
-  var kmlFile = ignToKml( ignData, filename, tf, ignPt, rows, cols, height, width);
+  fs.writeFileSync('./kmlTest.kml', maps['kml'], {encoding: 'utf8'});
 
-  fs.writeFileSync('./kmlTest.kml', kmlFile, {encoding: 'utf8'});
+  var file = fs.createWriteStream('./pathCoordinates.dat');
+  file.on('error', function(err){ 
+    return console.log('Error on writing path coordinates file')
+  });
+  maps['path'].forEach( function(v){
+    file.write(v.join(',')+'\n');
+  });
+  file.end();
 
 }
 
