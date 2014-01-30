@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
 <Document>
-  <name>Mean ignition time</name>
+  <name>
+    {{tag}}
+  </name>
   <Style id="sn_ylw-pushpin">
     <IconStyle>
       <scale>1.1</scale>
@@ -11,10 +13,14 @@
       <hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
     </IconStyle>
     <LineStyle>
-      <color>ff0000ff</color>
+      <color>
+        {{lineColour}}
+      </color>
     </LineStyle>
     <PolyStyle>
-      <color>800000ff</color>
+      <color>
+        {{polyColour}}
+      </color>
     </PolyStyle>
   </Style>
   <StyleMap id="msn_ylw-pushpin">
@@ -36,21 +42,27 @@
       <hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
     </IconStyle>
     <LineStyle>
-      <color>ff0000ff</color>
+      <color>
+        {{lineColour}}
+      </color>
     </LineStyle>
     <PolyStyle>
-      <color>800000ff</color>
+      <color>
+        {{polyColour}}
+      </color>
     </PolyStyle>
   </Style>
   <Placemark>
-    <name>Mean 1 h</name>
+    <name>
+      {{tag}}
+    </name>
     <styleUrl>#msn_ylw-pushpin</styleUrl>
     <Polygon>
       <tessellate>1</tessellate>
       <outerBoundaryIs>
         <LinearRing>
           <coordinates>
-            {{ boundaryCoordinates }}
+            {{ inCoordinates }}
           </coordinates>
         </LinearRing>
       </outerBoundaryIs>
